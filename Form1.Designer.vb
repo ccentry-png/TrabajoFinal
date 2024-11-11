@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,20 @@ Partial Class Form1
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DataSet1 = New TrabajoFinal.DataSet1()
+        Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuariosTableAdapter = New TrabajoFinal.DataSet1TableAdapters.usuariosTableAdapter()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -82,6 +88,20 @@ Partial Class Form1
         Me.Button1.Text = "Entrar"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UsuariosBindingSource
+        '
+        Me.UsuariosBindingSource.DataMember = "usuarios"
+        Me.UsuariosBindingSource.DataSource = Me.DataSet1
+        '
+        'UsuariosTableAdapter
+        '
+        Me.UsuariosTableAdapter.ClearBeforeFill = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -95,6 +115,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -105,4 +127,7 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents UsuariosBindingSource As BindingSource
+    Friend WithEvents UsuariosTableAdapter As DataSet1TableAdapters.usuariosTableAdapter
 End Class
