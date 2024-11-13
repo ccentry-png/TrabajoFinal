@@ -6,9 +6,6 @@
         <add name="TrabajoFinal.My.MySettings.trabajoFinalConnectionString"
             connectionString="Data Source=.\sqlexpress;Initial Catalog=trabajoFinal;User ID=sa;Password=alumnos;TrustServerCertificate=True"
             providerName="System.Data.SqlClient" />
-        <add name="TrabajoFinal.My.MySettings.TrabajoCasaConnectionString"
-            connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=Trabajo;Integrated Security=True;TrustServerCertificate=True"
-            providerName="System.Data.SqlClient" />
     </connectionStrings>
     <startup>
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />

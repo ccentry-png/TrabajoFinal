@@ -10,20 +10,25 @@ Public Class Form1
 
 
 
-        Dim foundRow As DataRow = DataSet1.usuarios.Rows.Find(user)
+        Dim foundRows() As DataRow = DataSet1.usuarios.Select("usuario = '" & user & "'")
 
-        If foundRow IsNot Nothing Then
-            If (foundRow(1).ToString = pass) Then
-                ShowDialog(FormMain)
+        If foundRows.Length > 0 Then
+            Dim foundRow As DataRow = foundRows(0)
 
+
+            If foundRow IsNot Nothing Then
+                If (foundRow(2).ToString = pass) Then
+                    FormMain.Show()
+                    Me.Hide()
+
+                Else
+                    MsgBox("password incorrecto!")
+
+                End If
             Else
-                MsgBox("password incorrecto!")
-
+                MsgBox("A row with the primary key of " & user & " could not be found")
             End If
-        Else
-            MsgBox("A row with the primary key of " & user & " could not be found")
         End If
-
 
     End Sub
 
