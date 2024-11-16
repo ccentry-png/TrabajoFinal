@@ -35,6 +35,7 @@ Partial Class FormMain
         Me.ProductosTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
         Me.LabelProductoSelecionado = New System.Windows.Forms.Label()
         Me.ButtonModificarProducto = New System.Windows.Forms.Button()
+        Me.ButtonBorrarProducto = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,9 +109,9 @@ Partial Class FormMain
         '
         Me.ButtonCrearProducto.Location = New System.Drawing.Point(609, 482)
         Me.ButtonCrearProducto.Name = "ButtonCrearProducto"
-        Me.ButtonCrearProducto.Size = New System.Drawing.Size(91, 62)
+        Me.ButtonCrearProducto.Size = New System.Drawing.Size(133, 62)
         Me.ButtonCrearProducto.TabIndex = 2
-        Me.ButtonCrearProducto.Text = "Crear Producto"
+        Me.ButtonCrearProducto.Text = "Crear Producto Nuevo"
         Me.ButtonCrearProducto.UseVisualStyleBackColor = True
         '
         'ProductosBindingSource
@@ -133,18 +134,28 @@ Partial Class FormMain
         '
         'ButtonModificarProducto
         '
-        Me.ButtonModificarProducto.Location = New System.Drawing.Point(706, 482)
+        Me.ButtonModificarProducto.Location = New System.Drawing.Point(748, 482)
         Me.ButtonModificarProducto.Name = "ButtonModificarProducto"
         Me.ButtonModificarProducto.Size = New System.Drawing.Size(91, 62)
         Me.ButtonModificarProducto.TabIndex = 4
         Me.ButtonModificarProducto.Text = "Modificar Producto"
         Me.ButtonModificarProducto.UseVisualStyleBackColor = True
         '
+        'ButtonBorrarProducto
+        '
+        Me.ButtonBorrarProducto.Location = New System.Drawing.Point(845, 482)
+        Me.ButtonBorrarProducto.Name = "ButtonBorrarProducto"
+        Me.ButtonBorrarProducto.Size = New System.Drawing.Size(88, 62)
+        Me.ButtonBorrarProducto.TabIndex = 5
+        Me.ButtonBorrarProducto.Text = "Borrar Producto"
+        Me.ButtonBorrarProducto.UseVisualStyleBackColor = True
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1135, 620)
+        Me.Controls.Add(Me.ButtonBorrarProducto)
         Me.Controls.Add(Me.ButtonModificarProducto)
         Me.Controls.Add(Me.LabelProductoSelecionado)
         Me.Controls.Add(Me.ButtonCrearProducto)
@@ -173,4 +184,5 @@ Partial Class FormMain
     Friend WithEvents ButtonCrearProducto As Button
     Friend WithEvents LabelProductoSelecionado As Label
     Friend WithEvents ButtonModificarProducto As Button
+    Friend WithEvents ButtonBorrarProducto As Button
 End Class

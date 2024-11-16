@@ -45,6 +45,7 @@ Partial Class FormProductoNuevo
         '
         'Button1
         '
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button1.Location = New System.Drawing.Point(400, 81)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 60)
