@@ -25,14 +25,16 @@ Partial Class FormMain
         Me.components = New System.ComponentModel.Container()
         Me.ButtonVolverALogin = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ButtonCrearProducto = New System.Windows.Forms.Button()
         Me.NombreProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodigoBarraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProductos = New TrabajoFinal.DataSetProductos()
+        Me.ButtonCrearProducto = New System.Windows.Forms.Button()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductosTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
+        Me.LabelProductoSelecionado = New System.Windows.Forms.Label()
+        Me.ButtonModificarProducto = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,25 +52,20 @@ Partial Class FormMain
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreProductoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CodigoBarraDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ProductosBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(609, 12)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
         Me.DataGridView1.Size = New System.Drawing.Size(514, 425)
         Me.DataGridView1.TabIndex = 1
-        '
-        'ButtonCrearProducto
-        '
-        Me.ButtonCrearProducto.Location = New System.Drawing.Point(609, 443)
-        Me.ButtonCrearProducto.Name = "ButtonCrearProducto"
-        Me.ButtonCrearProducto.Size = New System.Drawing.Size(91, 62)
-        Me.ButtonCrearProducto.TabIndex = 2
-        Me.ButtonCrearProducto.Text = "Crear Producto"
-        Me.ButtonCrearProducto.UseVisualStyleBackColor = True
         '
         'NombreProductoDataGridViewTextBoxColumn
         '
@@ -76,6 +73,7 @@ Partial Class FormMain
         Me.NombreProductoDataGridViewTextBoxColumn.HeaderText = "NombreProducto"
         Me.NombreProductoDataGridViewTextBoxColumn.MinimumWidth = 8
         Me.NombreProductoDataGridViewTextBoxColumn.Name = "NombreProductoDataGridViewTextBoxColumn"
+        Me.NombreProductoDataGridViewTextBoxColumn.ReadOnly = True
         Me.NombreProductoDataGridViewTextBoxColumn.Width = 150
         '
         'PrecioDataGridViewTextBoxColumn
@@ -84,6 +82,7 @@ Partial Class FormMain
         Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
         Me.PrecioDataGridViewTextBoxColumn.MinimumWidth = 8
         Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
         Me.PrecioDataGridViewTextBoxColumn.Width = 150
         '
         'CodigoBarraDataGridViewTextBoxColumn
@@ -92,6 +91,7 @@ Partial Class FormMain
         Me.CodigoBarraDataGridViewTextBoxColumn.HeaderText = "CodigoBarra"
         Me.CodigoBarraDataGridViewTextBoxColumn.MinimumWidth = 8
         Me.CodigoBarraDataGridViewTextBoxColumn.Name = "CodigoBarraDataGridViewTextBoxColumn"
+        Me.CodigoBarraDataGridViewTextBoxColumn.ReadOnly = True
         Me.CodigoBarraDataGridViewTextBoxColumn.Width = 150
         '
         'ProductosBindingSource1
@@ -104,6 +104,15 @@ Partial Class FormMain
         Me.DataSetProductos.DataSetName = "DataSetProductos"
         Me.DataSetProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'ButtonCrearProducto
+        '
+        Me.ButtonCrearProducto.Location = New System.Drawing.Point(609, 482)
+        Me.ButtonCrearProducto.Name = "ButtonCrearProducto"
+        Me.ButtonCrearProducto.Size = New System.Drawing.Size(91, 62)
+        Me.ButtonCrearProducto.TabIndex = 2
+        Me.ButtonCrearProducto.Text = "Crear Producto"
+        Me.ButtonCrearProducto.UseVisualStyleBackColor = True
+        '
         'ProductosBindingSource
         '
         Me.ProductosBindingSource.DataMember = "Productos"
@@ -113,11 +122,31 @@ Partial Class FormMain
         '
         Me.ProductosTableAdapter.ClearBeforeFill = True
         '
+        'LabelProductoSelecionado
+        '
+        Me.LabelProductoSelecionado.AutoSize = True
+        Me.LabelProductoSelecionado.Location = New System.Drawing.Point(614, 450)
+        Me.LabelProductoSelecionado.Name = "LabelProductoSelecionado"
+        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(169, 20)
+        Me.LabelProductoSelecionado.TabIndex = 3
+        Me.LabelProductoSelecionado.Text = "Producto Selecionado:"
+        '
+        'ButtonModificarProducto
+        '
+        Me.ButtonModificarProducto.Location = New System.Drawing.Point(706, 482)
+        Me.ButtonModificarProducto.Name = "ButtonModificarProducto"
+        Me.ButtonModificarProducto.Size = New System.Drawing.Size(91, 62)
+        Me.ButtonModificarProducto.TabIndex = 4
+        Me.ButtonModificarProducto.Text = "Modificar Producto"
+        Me.ButtonModificarProducto.UseVisualStyleBackColor = True
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1135, 620)
+        Me.Controls.Add(Me.ButtonModificarProducto)
+        Me.Controls.Add(Me.LabelProductoSelecionado)
         Me.Controls.Add(Me.ButtonCrearProducto)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ButtonVolverALogin)
@@ -128,6 +157,7 @@ Partial Class FormMain
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -141,4 +171,6 @@ Partial Class FormMain
     Friend WithEvents CodigoBarraDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductosBindingSource1 As BindingSource
     Friend WithEvents ButtonCrearProducto As Button
+    Friend WithEvents LabelProductoSelecionado As Label
+    Friend WithEvents ButtonModificarProducto As Button
 End Class

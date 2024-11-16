@@ -18,6 +18,8 @@ Public Class Form1
                 If (foundRow(2).ToString = pass) Then
                     FormMain.Show()
                     Me.Hide()
+                    TextBoxUsuario.Text = ""
+                    TextBoxPassword.Text = ""
 
                 Else
                     MsgBox("password incorrecto!")

@@ -25,12 +25,13 @@ Partial Class FormProductoNuevo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.DataSetProductos1 = New TrabajoFinal.DataSetProductos()
         Me.ProductosTableAdapter1 = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         CType(Me.DataSetProductos1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -57,13 +58,6 @@ Partial Class FormProductoNuevo
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(206, 26)
         Me.TextBox1.TabIndex = 2
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(93, 66)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(206, 26)
-        Me.TextBox2.TabIndex = 4
         '
         'Label2
         '
@@ -93,13 +87,22 @@ Partial Class FormProductoNuevo
         '
         Me.ProductosTableAdapter1.ClearBeforeFill = True
         '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.DecimalPlaces = 2
+        Me.NumericUpDown1.Location = New System.Drawing.Point(93, 64)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 26)
+        Me.NumericUpDown1.TabIndex = 6
+        '
         'FormProductoNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(551, 189)
+        Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
@@ -107,6 +110,7 @@ Partial Class FormProductoNuevo
         Me.Name = "FormProductoNuevo"
         Me.Text = "FormProductoNuevo"
         CType(Me.DataSetProductos1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -115,9 +119,9 @@ Partial Class FormProductoNuevo
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents DataSetProductos1 As DataSetProductos
     Friend WithEvents ProductosTableAdapter1 As DataSetProductosTableAdapters.ProductosTableAdapter
+    Friend WithEvents NumericUpDown1 As NumericUpDown
 End Class

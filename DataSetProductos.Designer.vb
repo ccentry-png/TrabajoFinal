@@ -451,7 +451,6 @@ Partial Public Class DataSetProductos
             Me.columnProductoID.ReadOnly = true
             Me.columnProductoID.Unique = true
             Me.columnNombreProducto.MaxLength = 100
-            Me.columnCodigoBarra.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -641,7 +640,11 @@ Partial Public Class DataSetProductos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property CodigoBarra() As Integer
             Get
-                Return CType(Me(Me.tableProductos.CodigoBarraColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableProductos.CodigoBarraColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CodigoBarra' de la tabla 'Productos' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableProductos.CodigoBarraColumn) = value
@@ -670,6 +673,18 @@ Partial Public Class DataSetProductos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetPrecioNull()
             Me(Me.tableProductos.PrecioColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsCodigoBarraNull() As Boolean
+            Return Me.IsNull(Me.tableProductos.CodigoBarraColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetCodigoBarraNull()
+            Me(Me.tableProductos.CodigoBarraColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -905,12 +920,12 @@ Namespace DataSetProductosTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "dbo.InsertQuery"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreProducto", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Precio", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 10, 2, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodigoBarra", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).CommandText = "INSERT INTO Productos"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             (NombreProducto, Precio)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@NombreProd"& _ 
+                "ucto,@Precio); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProductoID, NombreProducto, Precio, CodigoBarra FROM Pro"& _ 
+                "ductos WHERE (ProductoID = SCOPE_IDENTITY())"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreProducto", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "NombreProducto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Precio", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 10, 2, "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -969,7 +984,7 @@ Namespace DataSetProductosTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ProductoID As Integer, ByVal Original_NombreProducto As String, ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CodigoBarra As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ProductoID As Integer, ByVal Original_NombreProducto As String, ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CodigoBarra As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ProductoID,Integer)
             If (Original_NombreProducto Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -985,7 +1000,11 @@ Namespace DataSetProductosTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_CodigoBarra,Integer)
+            If (Original_CodigoBarra.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_CodigoBarra.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1005,7 +1024,7 @@ Namespace DataSetProductosTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Global.System.Nullable(Of Integer)) As Integer
             If (NombreProducto Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -1016,7 +1035,11 @@ Namespace DataSetProductosTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(CodigoBarra,Integer)
+            If (CodigoBarra.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(CodigoBarra.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1036,7 +1059,7 @@ Namespace DataSetProductosTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Integer, ByVal Original_ProductoID As Integer, ByVal Original_NombreProducto As String, ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CodigoBarra As Integer, ByVal ProductoID As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Global.System.Nullable(Of Integer), ByVal Original_ProductoID As Integer, ByVal Original_NombreProducto As String, ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CodigoBarra As Global.System.Nullable(Of Integer), ByVal ProductoID As Integer) As Integer
             If (NombreProducto Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -1047,7 +1070,11 @@ Namespace DataSetProductosTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CodigoBarra,Integer)
+            If (CodigoBarra.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CodigoBarra.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_ProductoID,Integer)
             If (Original_NombreProducto Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
@@ -1063,7 +1090,11 @@ Namespace DataSetProductosTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CodigoBarra,Integer)
+            If (Original_CodigoBarra.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CodigoBarra.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
             Me.Adapter.UpdateCommand.Parameters(9).Value = CType(ProductoID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1084,7 +1115,7 @@ Namespace DataSetProductosTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Integer, ByVal Original_ProductoID As Integer, ByVal Original_NombreProducto As String, ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CodigoBarra As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Global.System.Nullable(Of Integer), ByVal Original_ProductoID As Integer, ByVal Original_NombreProducto As String, ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CodigoBarra As Global.System.Nullable(Of Integer)) As Integer
             Return Me.Update(NombreProducto, Precio, CodigoBarra, Original_ProductoID, Original_NombreProducto, Original_Precio, Original_CodigoBarra, Original_ProductoID)
         End Function
         
@@ -1092,22 +1123,17 @@ Namespace DataSetProductosTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertQuery(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CodigoBarra As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function InsertNoBar(ByVal NombreProducto As String, ByVal Precio As Global.System.Nullable(Of Decimal)) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
             If (NombreProducto Is Nothing) Then
-                command.Parameters(1).Value = Global.System.DBNull.Value
+                command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(NombreProducto,String)
+                command.Parameters(0).Value = CType(NombreProducto,String)
             End If
             If (Precio.HasValue = true) Then
-                command.Parameters(2).Value = CType(Precio.Value,Decimal)
+                command.Parameters(1).Value = CType(Precio.Value,Decimal)
             Else
-                command.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (CodigoBarra.HasValue = true) Then
-                command.Parameters(3).Value = CType(CodigoBarra.Value,Integer)
-            Else
-                command.Parameters(3).Value = Global.System.DBNull.Value
+                command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
