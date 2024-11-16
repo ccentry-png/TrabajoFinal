@@ -3,15 +3,13 @@
 Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-
-
         Dim user = TextBoxUsuario.Text
         Dim pass = TextBoxPassword.Text
 
-
-
+        'buscar usuarios por nombre
         Dim foundRows() As DataRow = DataSet1.usuarios.Select("usuario = '" & user & "'")
 
+        '.Select devuelve array, agarra primer resultado
         If foundRows.Length > 0 Then
             Dim foundRow As DataRow = foundRows(0)
 
@@ -26,7 +24,7 @@ Public Class Form1
 
                 End If
             Else
-                MsgBox("A row with the primary key of " & user & " could not be found")
+                MsgBox("usuario no existe")
             End If
         End If
 
