@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormMain
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormMain
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.ButtonVolverALogin = New System.Windows.Forms.Button()
@@ -31,11 +31,11 @@ Partial Class FormMain
         Me.ProductosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProductos = New TrabajoFinal.DataSetProductos()
         Me.ButtonCrearProducto = New System.Windows.Forms.Button()
-        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProductosTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
         Me.LabelProductoSelecionado = New System.Windows.Forms.Label()
         Me.ButtonModificarProducto = New System.Windows.Forms.Button()
         Me.ButtonBorrarProducto = New System.Windows.Forms.Button()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,7 +59,7 @@ Partial Class FormMain
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreProductoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CodigoBarraDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ProductosBindingSource1
-        Me.DataGridView1.Location = New System.Drawing.Point(609, 12)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 60)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -107,12 +107,39 @@ Partial Class FormMain
         '
         'ButtonCrearProducto
         '
-        Me.ButtonCrearProducto.Location = New System.Drawing.Point(609, 482)
+        Me.ButtonCrearProducto.Location = New System.Drawing.Point(12, 532)
         Me.ButtonCrearProducto.Name = "ButtonCrearProducto"
         Me.ButtonCrearProducto.Size = New System.Drawing.Size(133, 62)
         Me.ButtonCrearProducto.TabIndex = 2
         Me.ButtonCrearProducto.Text = "Crear Producto Nuevo"
         Me.ButtonCrearProducto.UseVisualStyleBackColor = True
+        '
+        'LabelProductoSelecionado
+        '
+        Me.LabelProductoSelecionado.AutoSize = True
+        Me.LabelProductoSelecionado.Location = New System.Drawing.Point(17, 500)
+        Me.LabelProductoSelecionado.Name = "LabelProductoSelecionado"
+        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(169, 20)
+        Me.LabelProductoSelecionado.TabIndex = 3
+        Me.LabelProductoSelecionado.Text = "Producto Selecionado:"
+        '
+        'ButtonModificarProducto
+        '
+        Me.ButtonModificarProducto.Location = New System.Drawing.Point(151, 532)
+        Me.ButtonModificarProducto.Name = "ButtonModificarProducto"
+        Me.ButtonModificarProducto.Size = New System.Drawing.Size(91, 62)
+        Me.ButtonModificarProducto.TabIndex = 4
+        Me.ButtonModificarProducto.Text = "Modificar Producto"
+        Me.ButtonModificarProducto.UseVisualStyleBackColor = True
+        '
+        'ButtonBorrarProducto
+        '
+        Me.ButtonBorrarProducto.Location = New System.Drawing.Point(248, 532)
+        Me.ButtonBorrarProducto.Name = "ButtonBorrarProducto"
+        Me.ButtonBorrarProducto.Size = New System.Drawing.Size(88, 62)
+        Me.ButtonBorrarProducto.TabIndex = 5
+        Me.ButtonBorrarProducto.Text = "Borrar Producto"
+        Me.ButtonBorrarProducto.UseVisualStyleBackColor = True
         '
         'ProductosBindingSource
         '
@@ -123,45 +150,18 @@ Partial Class FormMain
         '
         Me.ProductosTableAdapter.ClearBeforeFill = True
         '
-        'LabelProductoSelecionado
-        '
-        Me.LabelProductoSelecionado.AutoSize = True
-        Me.LabelProductoSelecionado.Location = New System.Drawing.Point(614, 450)
-        Me.LabelProductoSelecionado.Name = "LabelProductoSelecionado"
-        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(169, 20)
-        Me.LabelProductoSelecionado.TabIndex = 3
-        Me.LabelProductoSelecionado.Text = "Producto Selecionado:"
-        '
-        'ButtonModificarProducto
-        '
-        Me.ButtonModificarProducto.Location = New System.Drawing.Point(748, 482)
-        Me.ButtonModificarProducto.Name = "ButtonModificarProducto"
-        Me.ButtonModificarProducto.Size = New System.Drawing.Size(91, 62)
-        Me.ButtonModificarProducto.TabIndex = 4
-        Me.ButtonModificarProducto.Text = "Modificar Producto"
-        Me.ButtonModificarProducto.UseVisualStyleBackColor = True
-        '
-        'ButtonBorrarProducto
-        '
-        Me.ButtonBorrarProducto.Location = New System.Drawing.Point(845, 482)
-        Me.ButtonBorrarProducto.Name = "ButtonBorrarProducto"
-        Me.ButtonBorrarProducto.Size = New System.Drawing.Size(88, 62)
-        Me.ButtonBorrarProducto.TabIndex = 5
-        Me.ButtonBorrarProducto.Text = "Borrar Producto"
-        Me.ButtonBorrarProducto.UseVisualStyleBackColor = True
-        '
-        'FormMain
+        'FormClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1135, 620)
+        Me.ClientSize = New System.Drawing.Size(538, 612)
         Me.Controls.Add(Me.ButtonBorrarProducto)
         Me.Controls.Add(Me.ButtonModificarProducto)
         Me.Controls.Add(Me.LabelProductoSelecionado)
         Me.Controls.Add(Me.ButtonCrearProducto)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ButtonVolverALogin)
-        Me.Name = "FormMain"
+        Me.Name = "FormClientes"
         Me.Text = "Form2"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()

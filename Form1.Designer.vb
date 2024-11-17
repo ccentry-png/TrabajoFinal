@@ -32,6 +32,8 @@ Partial Class Form1
         Me.DataSet1 = New TrabajoFinal.DataSet1()
         Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsuariosTableAdapter = New TrabajoFinal.DataSet1TableAdapters.usuariosTableAdapter()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -110,11 +112,31 @@ Partial Class Form1
         '
         Me.UsuariosTableAdapter.ClearBeforeFill = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(366, 56)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 8
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(366, 100)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 9
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(430, 646)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBoxPassword)
         Me.Controls.Add(Me.Label3)
@@ -139,4 +161,6 @@ Partial Class Form1
     Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents UsuariosBindingSource As BindingSource
     Friend WithEvents UsuariosTableAdapter As DataSet1TableAdapters.usuariosTableAdapter
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

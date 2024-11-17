@@ -26,6 +26,7 @@
 
 
         modificar = False
+        Button1.Text = "Agregar Producto"
         Me.Close()
 
 
@@ -35,7 +36,7 @@
     Public Function ShowDialogModificar(id As Integer)
 
         idAModificar = id
-
+        Button1.Text = "Modificar Producto"
         modificar = True
 
 

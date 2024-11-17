@@ -16,7 +16,7 @@ Public Class Form1
 
             If foundRow IsNot Nothing Then
                 If (foundRow(2).ToString = pass) Then
-                    FormMain.Show()
+                    FormProductos.Show()
                     Me.Hide()
                     TextBoxUsuario.Text = ""
                     TextBoxPassword.Text = ""
@@ -37,5 +37,9 @@ Public Class Form1
         'TODO: esta línea de código carga datos en la tabla 'DataSet1.usuarios' Puede moverla o quitarla según sea necesario.
         Me.UsuariosTableAdapter.Fill(Me.DataSet1.usuarios)
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        FormProductos.ShowDialog()
     End Sub
 End Class

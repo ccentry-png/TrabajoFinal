@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.ApplicationServices
 
-Public Class FormMain
+Public Class FormProductos
 
     Dim codigoProductoSelecionado As Integer
     Dim nombreProductoSelecionado As String
@@ -12,6 +12,7 @@ Public Class FormMain
     End Sub
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cargarDatos()
 
         ButtonModificarProducto.Enabled = False
