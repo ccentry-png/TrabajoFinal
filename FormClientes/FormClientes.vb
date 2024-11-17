@@ -7,7 +7,7 @@ Public Class FormClientes
 
 
     Private Sub ButtonVolverALogin_Click(sender As Object, e As EventArgs) Handles ButtonVolverALogin.Click
-        Form1.Show()
+        FormMain.Show()
         Me.Hide()
     End Sub
 
@@ -24,8 +24,8 @@ Public Class FormClientes
 
     Private Sub ButtonCrearProducto_Click(sender As Object, e As EventArgs) Handles ButtonCrearProducto.Click
         ' VVVVVVVVV
-        FormProductoNuevo.Text = "Añadiendo cliente..."
-        If (FormProductoNuevo.ShowDialog() = DialogResult.OK) Then
+        FormClienteNuevo.Text = "Añadiendo cliente..."
+        If (FormClienteNuevo.ShowDialog() = DialogResult.OK) Then
 
             cargarDatos()
 
@@ -38,7 +38,7 @@ Public Class FormClientes
 
         Dim nombre = DataGridView1.CurrentRow.Cells(0).Value
 
-        Dim foundRows() As DataRow = DataSetProductos.Cliente.Select("NombreCliente = '" & nombre & "'")
+        Dim foundRows() As DataRow = DataSetProductos.Cliente.Select("Nombre = '" & nombre & "'")
         If foundRows.Length > 0 Then
             Dim foundRow As DataRow = foundRows(0)
 
@@ -77,7 +77,7 @@ Public Class FormClientes
 
     Private Sub ButtonModificarProducto_Click(sender As Object, e As EventArgs) Handles ButtonModificarProducto.Click
         'TODO HACER EL FORM DE CREACION DE CLIENTES
-        Dim f2 As New FormProductoNuevo()
+        Dim f2 As New FormClienteNuevo()
         f2.Text = "Modificando " + nombreClienteSelecionado
         If (f2.ShowDialogModificar(codigoClienteSelecionado) = DialogResult.OK) Then
 

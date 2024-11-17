@@ -8,11 +8,11 @@
   <Shapes>
     <Shape ID="DesignTable:Productos" ZOrder="7" X="200" Y="121" Height="290" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="32" OldDataTableHeight="0" SplitterPosition="142" />
     <Shape ID="DesignTable:Venta" ZOrder="6" X="1042" Y="81" Height="209" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
-    <Shape ID="DesignTable:Cliente" ZOrder="5" X="664" Y="120" Height="236" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
-    <Shape ID="DesignTable:DetalleVenta" ZOrder="3" X="986" Y="363" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
+    <Shape ID="DesignTable:Cliente" ZOrder="1" X="664" Y="120" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
+    <Shape ID="DesignTable:DetalleVenta" ZOrder="4" X="986" Y="363" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK__Venta__ClienteID__2F10007B" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Venta__ClienteID__2F10007B" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>917</X>
@@ -28,7 +28,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__DetalleVe__Produ__32E0915F" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:FK__DetalleVe__Produ__32E0915F" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>500</X>
@@ -40,7 +40,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__DetalleVe__Venta__31EC6D26" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK__DetalleVe__Venta__31EC6D26" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1107</X>

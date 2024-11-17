@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormClientes
+Partial Class FormProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -25,20 +25,21 @@ Partial Class FormClientes
         Me.components = New System.ComponentModel.Container()
         Me.ButtonVolverALogin = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.NombreProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoBarraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetProductos = New TrabajoFinal.DataSetProductos()
         Me.ButtonCrearProducto = New System.Windows.Forms.Button()
         Me.LabelProductoSelecionado = New System.Windows.Forms.Label()
         Me.ButtonModificarProducto = New System.Windows.Forms.Button()
         Me.ButtonBorrarProducto = New System.Windows.Forms.Button()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClienteTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ClienteTableAdapter()
-        Me.ClienteIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonVolverALogin
@@ -47,7 +48,7 @@ Partial Class FormClientes
         Me.ButtonVolverALogin.Name = "ButtonVolverALogin"
         Me.ButtonVolverALogin.Size = New System.Drawing.Size(92, 42)
         Me.ButtonVolverALogin.TabIndex = 0
-        Me.ButtonVolverALogin.Text = "Salir"
+        Me.ButtonVolverALogin.Text = "Volver"
         Me.ButtonVolverALogin.UseVisualStyleBackColor = True
         '
         'DataGridView1
@@ -56,16 +57,48 @@ Partial Class FormClientes
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClienteIDDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ClienteBindingSource
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreProductoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CodigoBarraDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ProductosBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(12, 60)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(514, 425)
+        Me.DataGridView1.Size = New System.Drawing.Size(866, 425)
         Me.DataGridView1.TabIndex = 1
+        '
+        'NombreProductoDataGridViewTextBoxColumn
+        '
+        Me.NombreProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreProducto"
+        Me.NombreProductoDataGridViewTextBoxColumn.HeaderText = "NombreProducto"
+        Me.NombreProductoDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.NombreProductoDataGridViewTextBoxColumn.Name = "NombreProductoDataGridViewTextBoxColumn"
+        Me.NombreProductoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NombreProductoDataGridViewTextBoxColumn.Width = 150
+        '
+        'PrecioDataGridViewTextBoxColumn
+        '
+        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PrecioDataGridViewTextBoxColumn.Width = 150
+        '
+        'CodigoBarraDataGridViewTextBoxColumn
+        '
+        Me.CodigoBarraDataGridViewTextBoxColumn.DataPropertyName = "CodigoBarra"
+        Me.CodigoBarraDataGridViewTextBoxColumn.HeaderText = "CodigoBarra"
+        Me.CodigoBarraDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.CodigoBarraDataGridViewTextBoxColumn.Name = "CodigoBarraDataGridViewTextBoxColumn"
+        Me.CodigoBarraDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodigoBarraDataGridViewTextBoxColumn.Width = 150
+        '
+        'ProductosBindingSource1
+        '
+        Me.ProductosBindingSource1.DataMember = "Productos"
+        Me.ProductosBindingSource1.DataSource = Me.DataSetProductos
         '
         'DataSetProductos
         '
@@ -78,7 +111,7 @@ Partial Class FormClientes
         Me.ButtonCrearProducto.Name = "ButtonCrearProducto"
         Me.ButtonCrearProducto.Size = New System.Drawing.Size(133, 62)
         Me.ButtonCrearProducto.TabIndex = 2
-        Me.ButtonCrearProducto.Text = "Añadir Cliente"
+        Me.ButtonCrearProducto.Text = "Crear Producto Nuevo"
         Me.ButtonCrearProducto.UseVisualStyleBackColor = True
         '
         'LabelProductoSelecionado
@@ -86,9 +119,9 @@ Partial Class FormClientes
         Me.LabelProductoSelecionado.AutoSize = True
         Me.LabelProductoSelecionado.Location = New System.Drawing.Point(17, 500)
         Me.LabelProductoSelecionado.Name = "LabelProductoSelecionado"
-        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(154, 20)
+        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(169, 20)
         Me.LabelProductoSelecionado.TabIndex = 3
-        Me.LabelProductoSelecionado.Text = "Cliente Selecionado:"
+        Me.LabelProductoSelecionado.Text = "Producto Selecionado:"
         '
         'ButtonModificarProducto
         '
@@ -96,7 +129,7 @@ Partial Class FormClientes
         Me.ButtonModificarProducto.Name = "ButtonModificarProducto"
         Me.ButtonModificarProducto.Size = New System.Drawing.Size(91, 62)
         Me.ButtonModificarProducto.TabIndex = 4
-        Me.ButtonModificarProducto.Text = "Modificar Cliente"
+        Me.ButtonModificarProducto.Text = "Modificar Producto"
         Me.ButtonModificarProducto.UseVisualStyleBackColor = True
         '
         'ButtonBorrarProducto
@@ -105,70 +138,35 @@ Partial Class FormClientes
         Me.ButtonBorrarProducto.Name = "ButtonBorrarProducto"
         Me.ButtonBorrarProducto.Size = New System.Drawing.Size(88, 62)
         Me.ButtonBorrarProducto.TabIndex = 5
-        Me.ButtonBorrarProducto.Text = "Borrar Cliente"
+        Me.ButtonBorrarProducto.Text = "Borrar Producto"
         Me.ButtonBorrarProducto.UseVisualStyleBackColor = True
         '
-        'ClienteBindingSource
+        'ProductosBindingSource
         '
-        Me.ClienteBindingSource.DataMember = "Cliente"
-        Me.ClienteBindingSource.DataSource = Me.DataSetProductos
+        Me.ProductosBindingSource.DataMember = "Productos"
+        Me.ProductosBindingSource.DataSource = Me.DataSetProductos
         '
-        'ClienteTableAdapter
+        'ProductosTableAdapter
         '
-        Me.ClienteTableAdapter.ClearBeforeFill = True
+        Me.ProductosTableAdapter.ClearBeforeFill = True
         '
-        'ClienteIDDataGridViewTextBoxColumn
-        '
-        Me.ClienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID"
-        Me.ClienteIDDataGridViewTextBoxColumn.HeaderText = "ClienteID"
-        Me.ClienteIDDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.ClienteIDDataGridViewTextBoxColumn.Name = "ClienteIDDataGridViewTextBoxColumn"
-        Me.ClienteIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClienteIDDataGridViewTextBoxColumn.Width = 150
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NombreDataGridViewTextBoxColumn.Width = 150
-        '
-        'EmailDataGridViewTextBoxColumn
-        '
-        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "Email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email"
-        Me.EmailDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
-        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EmailDataGridViewTextBoxColumn.Width = 150
-        '
-        'TelefonoDataGridViewTextBoxColumn
-        '
-        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
-        Me.TelefonoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TelefonoDataGridViewTextBoxColumn.Width = 150
-        '
-        'FormClientes
+        'FormProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(538, 612)
+        Me.ClientSize = New System.Drawing.Size(890, 612)
         Me.Controls.Add(Me.ButtonBorrarProducto)
         Me.Controls.Add(Me.ButtonModificarProducto)
         Me.Controls.Add(Me.LabelProductoSelecionado)
         Me.Controls.Add(Me.ButtonCrearProducto)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ButtonVolverALogin)
-        Me.Name = "FormClientes"
+        Me.Name = "FormProductos"
         Me.Text = "Form2"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -176,15 +174,15 @@ Partial Class FormClientes
 
     Friend WithEvents ButtonVolverALogin As Button
     Friend WithEvents DataSetProductos As DataSetProductos
+    Friend WithEvents ProductosBindingSource As BindingSource
+    Friend WithEvents ProductosTableAdapter As DataSetProductosTableAdapters.ProductosTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents NombreProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoBarraDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductosBindingSource1 As BindingSource
     Friend WithEvents ButtonCrearProducto As Button
     Friend WithEvents LabelProductoSelecionado As Label
     Friend WithEvents ButtonModificarProducto As Button
     Friend WithEvents ButtonBorrarProducto As Button
-    Friend WithEvents ClienteBindingSource As BindingSource
-    Friend WithEvents ClienteTableAdapter As DataSetProductosTableAdapters.ClienteTableAdapter
-    Friend WithEvents ClienteIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

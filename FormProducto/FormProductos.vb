@@ -7,7 +7,7 @@ Public Class FormProductos
 
 
     Private Sub ButtonVolverALogin_Click(sender As Object, e As EventArgs) Handles ButtonVolverALogin.Click
-        Form1.Show()
+        FormMain.Show()
         Me.Hide()
     End Sub
 

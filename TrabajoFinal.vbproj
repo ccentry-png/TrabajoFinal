@@ -240,22 +240,34 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientes.Designer.vb">
+    <Compile Include="FormClientes\FormClienteNuevo.Designer.vb">
+      <DependentUpon>FormClienteNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes\FormClienteNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientes\FormClientes.Designer.vb">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormClientes.vb">
+    <Compile Include="FormClientes\FormClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductos.Designer.vb">
+    <Compile Include="FormMain.Designer.vb">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducto\FormProductos.Designer.vb">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProductos.vb">
+    <Compile Include="FormProducto\FormProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductoNuevo.Designer.vb">
+    <Compile Include="FormProducto\FormProductoNuevo.Designer.vb">
       <DependentUpon>FormProductoNuevo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProductoNuevo.vb">
+    <Compile Include="FormProducto\FormProductoNuevo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -278,13 +290,19 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClientes.resx">
+    <EmbeddedResource Include="FormClientes\FormClienteNuevo.resx">
+      <DependentUpon>FormClienteNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes\FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductos.resx">
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducto\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductoNuevo.resx">
+    <EmbeddedResource Include="FormProducto\FormProductoNuevo.resx">
       <DependentUpon>FormProductoNuevo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

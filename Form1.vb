@@ -16,7 +16,7 @@ Public Class Form1
 
             If foundRow IsNot Nothing Then
                 If (foundRow(2).ToString = pass) Then
-                    FormProductos.Show()
+                    FormMain.Show()
                     Me.Hide()
                     TextBoxUsuario.Text = ""
                     TextBoxPassword.Text = ""
@@ -41,5 +41,9 @@ Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FormProductos.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        FormClientes.ShowDialog()
     End Sub
 End Class
