@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormMain
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,50 +20,149 @@ Partial Class FormMain
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ButtonVolverALogin = New System.Windows.Forms.Button()
         Me.ButtonVerClientes = New System.Windows.Forms.Button()
         Me.ButtonVerProductos = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataSetVentas = New TrabajoFinal.DataSetVentas()
+        Me.DataSetVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable1TableAdapter = New TrabajoFinal.DataSetVentasTableAdapters.DataTable1TableAdapter()
+        Me.NombreProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioUnitarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubtotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetVentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetVentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonVolverALogin
         '
-        Me.ButtonVolverALogin.Location = New System.Drawing.Point(12, 12)
+        Me.ButtonVolverALogin.Location = New System.Drawing.Point(8, 8)
+        Me.ButtonVolverALogin.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonVolverALogin.Name = "ButtonVolverALogin"
-        Me.ButtonVolverALogin.Size = New System.Drawing.Size(92, 42)
+        Me.ButtonVolverALogin.Size = New System.Drawing.Size(61, 27)
         Me.ButtonVolverALogin.TabIndex = 1
         Me.ButtonVolverALogin.Text = "Salir"
         Me.ButtonVolverALogin.UseVisualStyleBackColor = True
         '
         'ButtonVerClientes
         '
-        Me.ButtonVerClientes.Location = New System.Drawing.Point(542, 346)
+        Me.ButtonVerClientes.Location = New System.Drawing.Point(488, 354)
+        Me.ButtonVerClientes.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonVerClientes.Name = "ButtonVerClientes"
-        Me.ButtonVerClientes.Size = New System.Drawing.Size(118, 58)
+        Me.ButtonVerClientes.Size = New System.Drawing.Size(79, 54)
         Me.ButtonVerClientes.TabIndex = 2
         Me.ButtonVerClientes.Text = "Ver todos los Clientes"
         Me.ButtonVerClientes.UseVisualStyleBackColor = True
         '
         'ButtonVerProductos
         '
-        Me.ButtonVerProductos.Location = New System.Drawing.Point(666, 346)
+        Me.ButtonVerProductos.Location = New System.Drawing.Point(571, 354)
+        Me.ButtonVerProductos.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonVerProductos.Name = "ButtonVerProductos"
-        Me.ButtonVerProductos.Size = New System.Drawing.Size(113, 58)
+        Me.ButtonVerProductos.Size = New System.Drawing.Size(75, 54)
         Me.ButtonVerProductos.TabIndex = 3
         Me.ButtonVerProductos.Text = "Ver todos los Productos"
         Me.ButtonVerProductos.UseVisualStyleBackColor = True
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreProductoDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.PrecioUnitarioDataGridViewTextBoxColumn, Me.SubtotalDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn, Me.FechaVentaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.DataTable1BindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(8, 40)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(782, 309)
+        Me.DataGridView1.TabIndex = 4
+        '
+        'DataSetVentas
+        '
+        Me.DataSetVentas.DataSetName = "DataSetVentas"
+        Me.DataSetVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataSetVentasBindingSource
+        '
+        Me.DataSetVentasBindingSource.DataSource = Me.DataSetVentas
+        Me.DataSetVentasBindingSource.Position = 0
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.DataSetVentasBindingSource
+        '
+        'DataTable1TableAdapter
+        '
+        Me.DataTable1TableAdapter.ClearBeforeFill = True
+        '
+        'NombreProductoDataGridViewTextBoxColumn
+        '
+        Me.NombreProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreProducto"
+        Me.NombreProductoDataGridViewTextBoxColumn.HeaderText = "NombreProducto"
+        Me.NombreProductoDataGridViewTextBoxColumn.Name = "NombreProductoDataGridViewTextBoxColumn"
+        '
+        'CantidadDataGridViewTextBoxColumn
+        '
+        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
+        '
+        'PrecioUnitarioDataGridViewTextBoxColumn
+        '
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecioUnitario"
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.HeaderText = "PrecioUnitario"
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.Name = "PrecioUnitarioDataGridViewTextBoxColumn"
+        '
+        'SubtotalDataGridViewTextBoxColumn
+        '
+        Me.SubtotalDataGridViewTextBoxColumn.DataPropertyName = "Subtotal"
+        Me.SubtotalDataGridViewTextBoxColumn.HeaderText = "Subtotal"
+        Me.SubtotalDataGridViewTextBoxColumn.Name = "SubtotalDataGridViewTextBoxColumn"
+        Me.SubtotalDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TotalDataGridViewTextBoxColumn
+        '
+        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
+        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
+        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
+        '
+        'FechaVentaDataGridViewTextBoxColumn
+        '
+        Me.FechaVentaDataGridViewTextBoxColumn.DataPropertyName = "FechaVenta"
+        Me.FechaVentaDataGridViewTextBoxColumn.HeaderText = "FechaVenta"
+        Me.FechaVentaDataGridViewTextBoxColumn.Name = "FechaVentaDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre Cliente"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
         'FormMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 419)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ButtonVerProductos)
         Me.Controls.Add(Me.ButtonVerClientes)
         Me.Controls.Add(Me.ButtonVolverALogin)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormMain"
         Me.Text = "FormMain"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetVentas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetVentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -71,4 +170,16 @@ Partial Class FormMain
     Friend WithEvents ButtonVolverALogin As Button
     Friend WithEvents ButtonVerClientes As Button
     Friend WithEvents ButtonVerProductos As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataSetVentasBindingSource As BindingSource
+    Friend WithEvents DataSetVentas As DataSetVentas
+    Friend WithEvents DataTable1BindingSource As BindingSource
+    Friend WithEvents DataTable1TableAdapter As DataSetVentasTableAdapters.DataTable1TableAdapter
+    Friend WithEvents NombreProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CantidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioUnitarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SubtotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaVentaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

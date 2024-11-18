@@ -2,9 +2,10 @@
 <xs:schema id="DataSetProductos" targetNamespace="http://tempuri.org/DataSetProductos.xsd" xmlns:mstns="http://tempuri.org/DataSetProductos.xsd" xmlns="http://tempuri.org/DataSetProductos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TrabajoCasaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TrabajoCasaConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TrabajoFinal.My.MySettings.GlobalReference.Default.TrabajoCasaConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="trabajoFinalConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="trabajoFinalConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TrabajoFinal.My.MySettings.GlobalReference.Default.trabajoFinalConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductosTableAdapter" GeneratorDataComponentClassName="ProductosTableAdapter" Name="Productos" UserDataComponentName="ProductosTableAdapter">
@@ -362,35 +363,35 @@ SELECT DetalleVentaID, VentaID, ProductoID, Cantidad, PrecioUnitario, Subtotal F
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Venta" msprop:Generator_RowClassName="VentaRow" msprop:Generator_RowEvHandlerName="VentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaRowDeleted" msprop:Generator_RowDeletingName="VentaRowDeleting" msprop:Generator_RowEvArgName="VentaRowChangeEvent" msprop:Generator_TablePropName="Venta" msprop:Generator_RowChangedName="VentaRowChanged" msprop:Generator_UserTableName="Venta" msprop:Generator_RowChangingName="VentaRowChanging" msprop:Generator_TableClassName="VentaDataTable" msprop:Generator_TableVarName="tableVenta">
+        <xs:element name="Venta" msprop:Generator_RowEvHandlerName="VentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaRowDeleted" msprop:Generator_RowDeletingName="VentaRowDeleting" msprop:Generator_RowEvArgName="VentaRowChangeEvent" msprop:Generator_TablePropName="Venta" msprop:Generator_RowChangedName="VentaRowChanged" msprop:Generator_UserTableName="Venta" msprop:Generator_RowChangingName="VentaRowChanging" msprop:Generator_RowClassName="VentaRow" msprop:Generator_TableClassName="VentaDataTable" msprop:Generator_TableVarName="tableVenta">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="VentaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="VentaID" msprop:Generator_ColumnPropNameInTable="VentaIDColumn" msprop:Generator_ColumnPropNameInRow="VentaID" msprop:Generator_ColumnVarNameInTable="columnVentaID" type="xs:int" />
-              <xs:element name="ClienteID" msprop:Generator_UserColumnName="ClienteID" msprop:Generator_ColumnPropNameInTable="ClienteIDColumn" msprop:Generator_ColumnPropNameInRow="ClienteID" msprop:Generator_ColumnVarNameInTable="columnClienteID" type="xs:int" minOccurs="0" />
-              <xs:element name="FechaVenta" msprop:Generator_UserColumnName="FechaVenta" msprop:Generator_ColumnPropNameInTable="FechaVentaColumn" msprop:Generator_ColumnPropNameInRow="FechaVenta" msprop:Generator_ColumnVarNameInTable="columnFechaVenta" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VentaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="VentaIDColumn" msprop:Generator_ColumnPropNameInRow="VentaID" msprop:Generator_UserColumnName="VentaID" msprop:Generator_ColumnVarNameInTable="columnVentaID" type="xs:int" />
+              <xs:element name="ClienteID" msprop:Generator_ColumnPropNameInTable="ClienteIDColumn" msprop:Generator_ColumnPropNameInRow="ClienteID" msprop:Generator_UserColumnName="ClienteID" msprop:Generator_ColumnVarNameInTable="columnClienteID" type="xs:int" minOccurs="0" />
+              <xs:element name="FechaVenta" msprop:Generator_ColumnPropNameInTable="FechaVentaColumn" msprop:Generator_ColumnPropNameInRow="FechaVenta" msprop:Generator_UserColumnName="FechaVenta" msprop:Generator_ColumnVarNameInTable="columnFechaVenta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cliente" msprop:Generator_RowClassName="ClienteRow" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowEvArgName="ClienteRowChangeEvent" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente">
+        <xs:element name="Cliente" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowEvArgName="ClienteRowChangeEvent" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowClassName="ClienteRow" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ClienteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ClienteID" msprop:Generator_ColumnPropNameInTable="ClienteIDColumn" msprop:Generator_ColumnPropNameInRow="ClienteID" msprop:Generator_ColumnVarNameInTable="columnClienteID" type="xs:int" />
-              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" minOccurs="0">
+              <xs:element name="ClienteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ClienteIDColumn" msprop:Generator_ColumnPropNameInRow="ClienteID" msprop:Generator_UserColumnName="ClienteID" msprop:Generator_ColumnVarNameInTable="columnClienteID" type="xs:int" />
+              <xs:element name="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Telefono" msprop:Generator_UserColumnName="Telefono" msprop:Generator_ColumnPropNameInTable="TelefonoColumn" msprop:Generator_ColumnPropNameInRow="Telefono" msprop:Generator_ColumnVarNameInTable="columnTelefono" minOccurs="0">
+              <xs:element name="Telefono" msprop:Generator_ColumnPropNameInTable="TelefonoColumn" msprop:Generator_ColumnPropNameInRow="Telefono" msprop:Generator_UserColumnName="Telefono" msprop:Generator_ColumnVarNameInTable="columnTelefono" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -400,15 +401,15 @@ SELECT DetalleVentaID, VentaID, ProductoID, Cantidad, PrecioUnitario, Subtotal F
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DetalleVenta" msprop:Generator_RowClassName="DetalleVentaRow" msprop:Generator_RowEvHandlerName="DetalleVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleVentaRowDeleted" msprop:Generator_RowDeletingName="DetalleVentaRowDeleting" msprop:Generator_RowEvArgName="DetalleVentaRowChangeEvent" msprop:Generator_TablePropName="DetalleVenta" msprop:Generator_RowChangedName="DetalleVentaRowChanged" msprop:Generator_UserTableName="DetalleVenta" msprop:Generator_RowChangingName="DetalleVentaRowChanging" msprop:Generator_TableClassName="DetalleVentaDataTable" msprop:Generator_TableVarName="tableDetalleVenta">
+        <xs:element name="DetalleVenta" msprop:Generator_RowEvHandlerName="DetalleVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleVentaRowDeleted" msprop:Generator_RowDeletingName="DetalleVentaRowDeleting" msprop:Generator_RowEvArgName="DetalleVentaRowChangeEvent" msprop:Generator_TablePropName="DetalleVenta" msprop:Generator_RowChangedName="DetalleVentaRowChanged" msprop:Generator_UserTableName="DetalleVenta" msprop:Generator_RowChangingName="DetalleVentaRowChanging" msprop:Generator_RowClassName="DetalleVentaRow" msprop:Generator_TableClassName="DetalleVentaDataTable" msprop:Generator_TableVarName="tableDetalleVenta">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DetalleVentaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DetalleVentaID" msprop:Generator_ColumnPropNameInTable="DetalleVentaIDColumn" msprop:Generator_ColumnPropNameInRow="DetalleVentaID" msprop:Generator_ColumnVarNameInTable="columnDetalleVentaID" type="xs:int" />
-              <xs:element name="VentaID" msprop:Generator_UserColumnName="VentaID" msprop:Generator_ColumnPropNameInTable="VentaIDColumn" msprop:Generator_ColumnPropNameInRow="VentaID" msprop:Generator_ColumnVarNameInTable="columnVentaID" type="xs:int" minOccurs="0" />
-              <xs:element name="ProductoID" msprop:Generator_UserColumnName="ProductoID" msprop:Generator_ColumnPropNameInTable="ProductoIDColumn" msprop:Generator_ColumnPropNameInRow="ProductoID" msprop:Generator_ColumnVarNameInTable="columnProductoID" type="xs:int" minOccurs="0" />
-              <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" minOccurs="0" />
-              <xs:element name="PrecioUnitario" msprop:Generator_UserColumnName="PrecioUnitario" msprop:Generator_ColumnPropNameInTable="PrecioUnitarioColumn" msprop:Generator_ColumnPropNameInRow="PrecioUnitario" msprop:Generator_ColumnVarNameInTable="columnPrecioUnitario" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Subtotal" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Subtotal" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_ColumnVarNameInTable="columnSubtotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DetalleVentaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="DetalleVentaIDColumn" msprop:Generator_ColumnPropNameInRow="DetalleVentaID" msprop:Generator_UserColumnName="DetalleVentaID" msprop:Generator_ColumnVarNameInTable="columnDetalleVentaID" type="xs:int" />
+              <xs:element name="VentaID" msprop:Generator_ColumnPropNameInTable="VentaIDColumn" msprop:Generator_ColumnPropNameInRow="VentaID" msprop:Generator_UserColumnName="VentaID" msprop:Generator_ColumnVarNameInTable="columnVentaID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductoID" msprop:Generator_ColumnPropNameInTable="ProductoIDColumn" msprop:Generator_ColumnPropNameInRow="ProductoID" msprop:Generator_UserColumnName="ProductoID" msprop:Generator_ColumnVarNameInTable="columnProductoID" type="xs:int" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="PrecioUnitario" msprop:Generator_ColumnPropNameInTable="PrecioUnitarioColumn" msprop:Generator_ColumnPropNameInRow="PrecioUnitario" msprop:Generator_UserColumnName="PrecioUnitario" msprop:Generator_ColumnVarNameInTable="columnPrecioUnitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Subtotal" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_UserColumnName="Subtotal" msprop:Generator_ColumnVarNameInTable="columnSubtotal" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -433,9 +434,9 @@ SELECT DetalleVentaID, VentaID, ProductoID, Cantidad, PrecioUnitario, Subtotal F
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Venta__ClienteID__2F10007B" msdata:parent="Cliente" msdata:child="Venta" msdata:parentkey="ClienteID" msdata:childkey="ClienteID" msprop:Generator_UserParentTable="Cliente" msprop:Generator_UserChildTable="Venta" msprop:Generator_RelationVarName="relationFK__Venta__ClienteID__2F10007B" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_UserRelationName="FK__Venta__ClienteID__2F10007B" />
-      <msdata:Relationship name="FK__DetalleVe__Produ__32E0915F" msdata:parent="Productos" msdata:child="DetalleVenta" msdata:parentkey="ProductoID" msdata:childkey="ProductoID" msprop:Generator_UserParentTable="Productos" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__Produ__32E0915F" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_UserRelationName="FK__DetalleVe__Produ__32E0915F" msprop:Generator_ParentPropName="ProductosRow" />
-      <msdata:Relationship name="FK__DetalleVe__Venta__31EC6D26" msdata:parent="Venta" msdata:child="DetalleVenta" msdata:parentkey="VentaID" msdata:childkey="VentaID" msprop:Generator_UserParentTable="Venta" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__Venta__31EC6D26" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_UserRelationName="FK__DetalleVe__Venta__31EC6D26" msprop:Generator_ParentPropName="VentaRow" />
+      <msdata:Relationship name="FK__Venta__ClienteID__2F10007B" msdata:parent="Cliente" msdata:child="Venta" msdata:parentkey="ClienteID" msdata:childkey="ClienteID" msprop:Generator_UserParentTable="Cliente" msprop:Generator_UserChildTable="Venta" msprop:Generator_RelationVarName="relationFK__Venta__ClienteID__2F10007B" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_UserRelationName="FK__Venta__ClienteID__2F10007B" msprop:Generator_ParentPropName="ClienteRow" />
+      <msdata:Relationship name="FK__DetalleVe__Produ__32E0915F" msdata:parent="Productos" msdata:child="DetalleVenta" msdata:parentkey="ProductoID" msdata:childkey="ProductoID" msprop:Generator_UserParentTable="Productos" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__Produ__32E0915F" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_ParentPropName="ProductosRow" msprop:Generator_UserRelationName="FK__DetalleVe__Produ__32E0915F" />
+      <msdata:Relationship name="FK__DetalleVe__Venta__31EC6D26" msdata:parent="Venta" msdata:child="DetalleVenta" msdata:parentkey="VentaID" msdata:childkey="VentaID" msprop:Generator_UserParentTable="Venta" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__Venta__31EC6D26" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_ParentPropName="VentaRow" msprop:Generator_UserRelationName="FK__DetalleVe__Venta__31EC6D26" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
