@@ -1,7 +1,9 @@
-﻿Public Class FormProductoNuevo
+﻿Imports ZXing
+
+Public Class FormProductoNuevo
     Dim idAModificar As Integer
     Dim modificar As Boolean = False
-
+    Dim barcodeID As Integer
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim nombre = TextBox1.Text
@@ -42,4 +44,24 @@
 
         Return Me.ShowDialog()
     End Function
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            Dim rnd As Random = New Random
+
+            barcodeID = rnd.Next(10000, 99999)
+
+            Dim bw As BarcodeWriter = New BarcodeWriter
+
+            bw.Format = BarcodeFormat.CODABAR
+            bw.Options.Width = 100
+            bw.Options.Height = 50
+
+            PictureBox1.Image = bw.Write(barcodeID)
+        Else
+            barcodeID = Nothing
+            PictureBox1.Image = Nothing
+        End If
+
+    End Sub
 End Class
