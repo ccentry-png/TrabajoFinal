@@ -16,8 +16,12 @@
 
 
         If modificar = True Then
+            Dim idVenta = DetalleVentaTableAdapter1.GetIdVenta(idAModificar)
+            DetalleVentaTableAdapter1.UpdateById(idProducto, cantidad, idAModificar)
 
-            'VentaTableAdapter1.UpdateQuery(idCliente, fecha, total, )
+            VentaTableAdapter1.UpdateByid(idCliente, fecha, total, idVenta)
+
+
 
 
         Else
@@ -44,7 +48,7 @@
     Public Function ShowDialogModificar(id As Integer)
 
         idAModificar = id
-        Button1.Text = "Modificar Producto"
+        Button1.Text = "Modificar Venta"
         modificar = True
 
 
@@ -80,5 +84,7 @@
         End If
     End Sub
 
+    Private Sub FormNewInsertVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

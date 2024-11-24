@@ -27,6 +27,14 @@ Partial Class FormMain
         Me.ButtonVerClientes = New System.Windows.Forms.Button()
         Me.ButtonVerProductos = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioUnitarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubtotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DetalleVentaID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetVentas = New TrabajoFinal.DataSetVentas()
@@ -36,16 +44,10 @@ Partial Class FormMain
         Me.ButtonCrearVenta = New System.Windows.Forms.Button()
         Me.VentaTableAdapter1 = New TrabajoFinal.DataSetProductosTableAdapters.VentaTableAdapter()
         Me.ProductosTableAdapter1 = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
-        Me.DataTable1TableAdapter = New TrabajoFinal.DataSetVentasTableAdapters.DataTable1TableAdapter()
         Me.DataSetProductos1 = New TrabajoFinal.DataSetProductos()
-        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioUnitarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubtotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreProductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DetalleVentaID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DataTable1TableAdapter = New TrabajoFinal.DataSetVentasTableAdapters.DataTable1TableAdapter()
+        Me.DetalleVentaTableAdapter1 = New TrabajoFinal.DataSetProductosTableAdapters.DetalleVentaTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetVentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,74 +95,6 @@ Partial Class FormMain
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.Size = New System.Drawing.Size(1173, 475)
         Me.DataGridView1.TabIndex = 4
-        '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.DataSetVentasBindingSource
-        '
-        'DataSetVentasBindingSource
-        '
-        Me.DataSetVentasBindingSource.DataSource = Me.DataSetVentas
-        Me.DataSetVentasBindingSource.Position = 0
-        '
-        'DataSetVentas
-        '
-        Me.DataSetVentas.DataSetName = "DataSetVentas"
-        Me.DataSetVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ButtonBorrarVenta
-        '
-        Me.ButtonBorrarVenta.Location = New System.Drawing.Point(250, 583)
-        Me.ButtonBorrarVenta.Name = "ButtonBorrarVenta"
-        Me.ButtonBorrarVenta.Size = New System.Drawing.Size(88, 62)
-        Me.ButtonBorrarVenta.TabIndex = 9
-        Me.ButtonBorrarVenta.Text = "Borrar Venta"
-        Me.ButtonBorrarVenta.UseVisualStyleBackColor = True
-        '
-        'ButtonModificarVEnta
-        '
-        Me.ButtonModificarVEnta.Location = New System.Drawing.Point(154, 583)
-        Me.ButtonModificarVEnta.Name = "ButtonModificarVEnta"
-        Me.ButtonModificarVEnta.Size = New System.Drawing.Size(92, 62)
-        Me.ButtonModificarVEnta.TabIndex = 8
-        Me.ButtonModificarVEnta.Text = "Modificar Venta"
-        Me.ButtonModificarVEnta.UseVisualStyleBackColor = True
-        '
-        'LabelProductoSelecionado
-        '
-        Me.LabelProductoSelecionado.AutoSize = True
-        Me.LabelProductoSelecionado.Location = New System.Drawing.Point(18, 551)
-        Me.LabelProductoSelecionado.Name = "LabelProductoSelecionado"
-        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(144, 20)
-        Me.LabelProductoSelecionado.TabIndex = 7
-        Me.LabelProductoSelecionado.Text = "Venta Selecionada"
-        '
-        'ButtonCrearVenta
-        '
-        Me.ButtonCrearVenta.Location = New System.Drawing.Point(14, 583)
-        Me.ButtonCrearVenta.Name = "ButtonCrearVenta"
-        Me.ButtonCrearVenta.Size = New System.Drawing.Size(134, 62)
-        Me.ButtonCrearVenta.TabIndex = 6
-        Me.ButtonCrearVenta.Text = "Nueva Venta"
-        Me.ButtonCrearVenta.UseVisualStyleBackColor = True
-        '
-        'VentaTableAdapter1
-        '
-        Me.VentaTableAdapter1.ClearBeforeFill = True
-        '
-        'ProductosTableAdapter1
-        '
-        Me.ProductosTableAdapter1.ClearBeforeFill = True
-        '
-        'DataTable1TableAdapter
-        '
-        Me.DataTable1TableAdapter.ClearBeforeFill = True
-        '
-        'DataSetProductos1
-        '
-        Me.DataSetProductos1.DataSetName = "DataSetProductos"
-        Me.DataSetProductos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CantidadDataGridViewTextBoxColumn
         '
@@ -228,11 +162,94 @@ Partial Class FormMain
         Me.DetalleVentaID.ReadOnly = True
         Me.DetalleVentaID.Width = 150
         '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.DataSetVentasBindingSource
+        '
+        'DataSetVentasBindingSource
+        '
+        Me.DataSetVentasBindingSource.DataSource = Me.DataSetVentas
+        Me.DataSetVentasBindingSource.Position = 0
+        '
+        'DataSetVentas
+        '
+        Me.DataSetVentas.DataSetName = "DataSetVentas"
+        Me.DataSetVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ButtonBorrarVenta
+        '
+        Me.ButtonBorrarVenta.Location = New System.Drawing.Point(250, 583)
+        Me.ButtonBorrarVenta.Name = "ButtonBorrarVenta"
+        Me.ButtonBorrarVenta.Size = New System.Drawing.Size(88, 62)
+        Me.ButtonBorrarVenta.TabIndex = 9
+        Me.ButtonBorrarVenta.Text = "Borrar Venta"
+        Me.ButtonBorrarVenta.UseVisualStyleBackColor = True
+        '
+        'ButtonModificarVEnta
+        '
+        Me.ButtonModificarVEnta.Location = New System.Drawing.Point(154, 583)
+        Me.ButtonModificarVEnta.Name = "ButtonModificarVEnta"
+        Me.ButtonModificarVEnta.Size = New System.Drawing.Size(92, 62)
+        Me.ButtonModificarVEnta.TabIndex = 8
+        Me.ButtonModificarVEnta.Text = "Modificar Venta"
+        Me.ButtonModificarVEnta.UseVisualStyleBackColor = True
+        '
+        'LabelProductoSelecionado
+        '
+        Me.LabelProductoSelecionado.AutoSize = True
+        Me.LabelProductoSelecionado.Location = New System.Drawing.Point(18, 551)
+        Me.LabelProductoSelecionado.Name = "LabelProductoSelecionado"
+        Me.LabelProductoSelecionado.Size = New System.Drawing.Size(144, 20)
+        Me.LabelProductoSelecionado.TabIndex = 7
+        Me.LabelProductoSelecionado.Text = "Venta Selecionada"
+        '
+        'ButtonCrearVenta
+        '
+        Me.ButtonCrearVenta.Location = New System.Drawing.Point(14, 583)
+        Me.ButtonCrearVenta.Name = "ButtonCrearVenta"
+        Me.ButtonCrearVenta.Size = New System.Drawing.Size(134, 62)
+        Me.ButtonCrearVenta.TabIndex = 6
+        Me.ButtonCrearVenta.Text = "Nueva Venta"
+        Me.ButtonCrearVenta.UseVisualStyleBackColor = True
+        '
+        'VentaTableAdapter1
+        '
+        Me.VentaTableAdapter1.ClearBeforeFill = True
+        '
+        'ProductosTableAdapter1
+        '
+        Me.ProductosTableAdapter1.ClearBeforeFill = True
+        '
+        'DataSetProductos1
+        '
+        Me.DataSetProductos1.DataSetName = "DataSetProductos"
+        Me.DataSetProductos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(974, 551)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(113, 83)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "Ver informe ventas"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'DataTable1TableAdapter
+        '
+        Me.DataTable1TableAdapter.ClearBeforeFill = True
+        '
+        'DetalleVentaTableAdapter1
+        '
+        Me.DetalleVentaTableAdapter1.ClearBeforeFill = True
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1200, 660)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ButtonBorrarVenta)
         Me.Controls.Add(Me.ButtonModificarVEnta)
         Me.Controls.Add(Me.LabelProductoSelecionado)
@@ -276,4 +293,6 @@ Partial Class FormMain
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreProductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DetalleVentaID As DataGridViewTextBoxColumn
+    Friend WithEvents Button2 As Button
+    Friend WithEvents DetalleVentaTableAdapter1 As DataSetProductosTableAdapters.DetalleVentaTableAdapter
 End Class

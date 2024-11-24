@@ -66,4 +66,8 @@ Public Class FormProductoNuevo
         End If
 
     End Sub
+
+    Private Sub FormProductoNuevo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
