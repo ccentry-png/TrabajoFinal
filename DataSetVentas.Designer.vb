@@ -297,6 +297,8 @@ Partial Public Class DataSetVentas
         
         Private columnNombreProducto As Global.System.Data.DataColumn
         
+        Private columnDetalleVentaID As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -389,6 +391,14 @@ Partial Public Class DataSetVentas
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property DetalleVentaIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDetalleVentaID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -427,10 +437,16 @@ Partial Public Class DataSetVentas
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overloads Function AddDataTable1Row(ByVal Cantidad As Integer, ByVal PrecioUnitario As Decimal, ByVal Subtotal As Decimal, ByVal Total As Decimal, ByVal FechaVenta As Date, ByVal Nombre As String, ByVal NombreProducto As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow,DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {Cantidad, PrecioUnitario, Subtotal, Total, FechaVenta, Nombre, NombreProducto}
+            Dim columnValuesArray() As Object = New Object() {Cantidad, PrecioUnitario, Subtotal, Total, FechaVenta, Nombre, NombreProducto, Nothing}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function FindByDetalleVentaID(ByVal DetalleVentaID As Integer) As DataTable1Row
+            Return CType(Me.Rows.Find(New Object() {DetalleVentaID}),DataTable1Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -457,6 +473,7 @@ Partial Public Class DataSetVentas
             Me.columnFechaVenta = MyBase.Columns("FechaVenta")
             Me.columnNombre = MyBase.Columns("Nombre")
             Me.columnNombreProducto = MyBase.Columns("NombreProducto")
+            Me.columnDetalleVentaID = MyBase.Columns("DetalleVentaID")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -476,9 +493,18 @@ Partial Public Class DataSetVentas
             MyBase.Columns.Add(Me.columnNombre)
             Me.columnNombreProducto = New Global.System.Data.DataColumn("NombreProducto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombreProducto)
+            Me.columnDetalleVentaID = New Global.System.Data.DataColumn("DetalleVentaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDetalleVentaID)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnDetalleVentaID}, true))
             Me.columnSubtotal.ReadOnly = true
             Me.columnNombre.MaxLength = 100
             Me.columnNombreProducto.MaxLength = 100
+            Me.columnDetalleVentaID.AutoIncrement = true
+            Me.columnDetalleVentaID.AutoIncrementSeed = -1
+            Me.columnDetalleVentaID.AutoIncrementStep = -1
+            Me.columnDetalleVentaID.AllowDBNull = false
+            Me.columnDetalleVentaID.ReadOnly = true
+            Me.columnDetalleVentaID.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -725,6 +751,17 @@ Partial Public Class DataSetVentas
             End Get
             Set
                 Me(Me.tableDataTable1.NombreProductoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property DetalleVentaID() As Integer
+            Get
+                Return CType(Me(Me.tableDataTable1.DetalleVentaIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableDataTable1.DetalleVentaIDColumn) = value
             End Set
         End Property
         
@@ -986,6 +1023,7 @@ Namespace DataSetVentasTableAdapters
             tableMapping.ColumnMappings.Add("FechaVenta", "FechaVenta")
             tableMapping.ColumnMappings.Add("Nombre", "Nombre")
             tableMapping.ColumnMappings.Add("NombreProducto", "NombreProducto")
+            tableMapping.ColumnMappings.Add("DetalleVentaID", "DetalleVentaID")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -993,7 +1031,7 @@ Namespace DataSetVentasTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.TrabajoFinal.My.MySettings.Default.trabajoFinalConnectionString
+            Me._connection.ConnectionString = Global.TrabajoFinal.My.MySettings.Default.TrabajoCasaConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1002,13 +1040,12 @@ Namespace DataSetVentasTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        dbo.Productos.NombreProducto, dbo.DetalleVenta.Cantidad, dbo.Detall"& _ 
-                "eVenta.PrecioUnitario, dbo.DetalleVenta.Subtotal, dbo.Venta.Total, dbo.Venta.Fec"& _ 
-                "haVenta, dbo.Cliente.Nombre"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.DetalleVenta INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
-                "                   dbo.Productos ON dbo.DetalleVenta.ProductoID = dbo.Productos."& _ 
-                "ProductoID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         dbo.Venta ON dbo.DetalleVenta.Ve"& _ 
-                "ntaID = dbo.Venta.VentaID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         dbo.Cliente ON db"& _ 
-                "o.Venta.ClienteID = dbo.Cliente.ClienteID"
+            Me._commandCollection(0).CommandText = "SELECT Productos.NombreProducto, DetalleVenta.PrecioUnitario, DetalleVenta.Subtot"& _ 
+                "al, Venta.Total, Venta.FechaVenta, Cliente.Nombre, DetalleVenta.Cantidad, Detall"& _ 
+                "eVenta.DetalleVentaID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   DetalleVenta INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             Productos ON"& _ 
+                " DetalleVenta.ProductoID = Productos.ProductoID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             Venta O"& _ 
+                "N DetalleVenta.VentaID = Venta.VentaID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             Cliente ON Venta"& _ 
+                ".ClienteID = Cliente.ClienteID"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
