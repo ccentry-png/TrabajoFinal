@@ -1,5 +1,5 @@
 ﻿Imports Microsoft.VisualBasic.ApplicationServices
-
+Imports ZXing
 Public Class FormProductos
 
     Dim codigoProductoSelecionado As Integer
@@ -45,10 +45,27 @@ Public Class FormProductos
 
             LabelProductoSelecionado.Text = "Producto selecionado: " + nombre
 
+            If foundRow(3).ToString.Length > 0 Then
+
+                Dim bw As BarcodeWriter = New BarcodeWriter
+
+                bw.Format = BarcodeFormat.CODABAR
+                bw.Options.Width = 100
+                bw.Options.Height = 200
+
+                PictureBox1.Image = bw.Write(foundRow(3))
+
+
+
+
+
+            End If
+
+
+
             ButtonBorrarProducto.Enabled = True
             ButtonModificarProducto.Enabled = True
-            'modificar formnuevoproducto para permitir modificacion de producto
-            'como mando datos al abrir form???
+
 
 
         End If
@@ -70,7 +87,7 @@ Public Class FormProductos
     End Sub
 
     Private Sub FormMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Application.Exit()
+        FormMain.Show()
     End Sub
 
     Private Sub ButtonModificarProducto_Click(sender As Object, e As EventArgs) Handles ButtonModificarProducto.Click

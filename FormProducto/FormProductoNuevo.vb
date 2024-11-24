@@ -12,6 +12,8 @@ Public Class FormProductoNuevo
         Dim barcode = Nothing
         If CheckBox1.Checked Then
             'TODO agrega barcode
+            barcode = barcodeID
+
 
         End If
 
@@ -22,7 +24,7 @@ Public Class FormProductoNuevo
 
         Else
 
-            ProductosTableAdapter1.InsertNoBar(NombreProducto:=nombre, Precio:=precio)
+            ProductosTableAdapter1.Insert(NombreProducto:=nombre, Precio:=precio, barcode)
 
         End If
 

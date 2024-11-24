@@ -36,10 +36,13 @@ Partial Class FormProductos
         Me.ButtonBorrarProducto = New System.Windows.Forms.Button()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductosTableAdapter = New TrabajoFinal.DataSetProductosTableAdapters.ProductosTableAdapter()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonVolverALogin
@@ -150,11 +153,27 @@ Partial Class FormProductos
         '
         Me.ProductosTableAdapter.ClearBeforeFill = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(372, 500)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(200, 100)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Name = "ReportViewer"
+        Me.ReportViewer1.Size = New System.Drawing.Size(396, 246)
+        Me.ReportViewer1.TabIndex = 0
+        '
         'FormProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(890, 612)
+        Me.ClientSize = New System.Drawing.Size(1284, 660)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ButtonBorrarProducto)
         Me.Controls.Add(Me.ButtonModificarProducto)
         Me.Controls.Add(Me.LabelProductoSelecionado)
@@ -167,6 +186,7 @@ Partial Class FormProductos
         CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -185,4 +205,6 @@ Partial Class FormProductos
     Friend WithEvents LabelProductoSelecionado As Label
     Friend WithEvents ButtonModificarProducto As Button
     Friend WithEvents ButtonBorrarProducto As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class

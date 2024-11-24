@@ -68,11 +68,21 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=Trabajo;Integrated Security=Tr"& _ 
-            "ue;TrustServerCertificate=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.\sqlexpress;Initial Catalog=trabajoFinal;User ID=sa;Password=alumnos"& _ 
+            ";TrustServerCertificate=True")>  _
         Public ReadOnly Property TrabajoCasaConnectionString() As String
             Get
                 Return CType(Me("TrabajoCasaConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDb)\MSSQLLocalDB;Integrated Security=True")>  _
+        Public ReadOnly Property LocalConnectionString() As String
+            Get
+                Return CType(Me("LocalConnectionString"),String)
             End Get
         End Property
     End Class

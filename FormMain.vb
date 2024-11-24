@@ -15,10 +15,24 @@
         Me.Hide()
     End Sub
 
-    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetVentas.DataTable1' Puede moverla o quitarla según sea necesario.
+
+    Private Sub ButtonCrearVenta_Click(sender As Object, e As EventArgs) Handles ButtonCrearVenta.Click
+        If (FormNewInsertVentas.ShowDialog() = DialogResult.OK) Then
+            'mostrar cambios NO SIRVE AAA
+            cargarDatos()
+
+        End If
+    End Sub
+
+    Private Sub cargarDatos()
         Me.DataTable1TableAdapter.Fill(Me.DataSetVentas.DataTable1)
 
+    End Sub
+    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarDatos()
 
+    End Sub
+    Private Sub FormMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
     End Sub
 End Class

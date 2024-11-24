@@ -265,6 +265,12 @@
     <Compile Include="FormMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormNewInsertVentas.Designer.vb">
+      <DependentUpon>FormNewInsertVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewInsertVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormProducto\FormProductos.Designer.vb">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SeleccionaVentas\FormSelectCliente.Designer.vb">
+      <DependentUpon>FormSelectCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionaVentas\FormSelectCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionaVentas\FormSelectProducto.Designer.vb">
+      <DependentUpon>FormSelectProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionaVentas\FormSelectProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -306,6 +324,9 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewInsertVentas.resx">
+      <DependentUpon>FormNewInsertVentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProducto\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
@@ -318,10 +339,15 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="SeleccionaVentas\FormSelectCliente.resx">
+      <DependentUpon>FormSelectCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleccionaVentas\FormSelectProducto.resx">
+      <DependentUpon>FormSelectProducto.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App - Copia.txt" />
     <Content Include="backup.sql" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -368,6 +394,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
